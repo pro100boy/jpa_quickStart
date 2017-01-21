@@ -8,13 +8,16 @@ import java.util.Set;
 
 @Entity
 @Table(name = "contact", schema = "javastudy", catalog = "")
+@NamedQueries(@NamedQuery(
+        name = ContactEntity.ALL_SORTED,
+        query = "SELECT c FROM ContactEntity c WHERE c.id < 12 ORDER BY c.birthDate"))
 public class ContactEntity {
     private int id;
     private String firstName;
     private String lastName;
     private Date birthDate;
     private int version;
-
+    public static final String ALL_SORTED = "ContactEntity.getAll";
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {

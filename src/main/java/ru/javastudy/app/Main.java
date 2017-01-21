@@ -25,8 +25,12 @@ public class Main {
         contacts = service.findByFirstNameAndLastName("Name1", "LastName1");
         printAll(contacts);
 
-        System.out.println(">>>");
+        System.out.println(">>>NativeQuery");
         contacts = service.findAll1();
+        printAll(contacts);
+
+        System.out.println(">>>NamedQuery");
+        contacts = service.getAll();
         printAll(contacts);
     }
 

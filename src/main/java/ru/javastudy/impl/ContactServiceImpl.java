@@ -23,6 +23,9 @@ public class ContactServiceImpl implements ContactService {
     @Autowired
     private ContactRepository contactRepository;
 
+    @PersistenceContext
+    private EntityManager em;
+
     public List<ContactEntity> findAll() {
         return Lists.newArrayList(contactRepository.findAll());
     }
@@ -38,5 +41,9 @@ public class ContactServiceImpl implements ContactService {
     public List<ContactEntity> findAll1() {
         List<ContactEntity> employees = contactRepository.findAll1();
         return employees;
+    }
+
+    public List<ContactEntity> getAll() {
+        return em.createNamedQuery(ContactEntity.ALL_SORTED, ContactEntity.class).getResultList();
     }
 }
