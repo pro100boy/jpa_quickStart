@@ -24,6 +24,10 @@ public class Main {
 
         contacts = service.findByFirstNameAndLastName("Name1", "LastName1");
         printAll(contacts);
+
+        System.out.println(">>>");
+        contacts = service.findAll1();
+        printAll(contacts);
     }
 
     private static void printAll(List<ContactEntity> contacts) {

@@ -9,4 +9,5 @@ public interface ContactService  {
     List<ContactEntity> findAll();
     List<ContactEntity> findByFirstName(String firstName);
     List<ContactEntity> findByFirstNameAndLastName(String firstName, String lastName);
+    List<ContactEntity> findAll1();
 }

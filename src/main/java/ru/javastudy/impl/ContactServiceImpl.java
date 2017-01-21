@@ -9,6 +9,10 @@ import ru.javastudy.entities.ContactEntity;
 import ru.javastudy.intf.ContactService;
 import ru.javastudy.repository.ContactRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service("jpaContactService")
@@ -31,4 +35,8 @@ public class ContactServiceImpl implements ContactService {
         return contactRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
+    public List<ContactEntity> findAll1() {
+        List<ContactEntity> employees = contactRepository.findAll1();
+        return employees;
+    }
 }
